@@ -4,6 +4,7 @@ namespace Backend.Models
 {
     public class StatusContribution
     {
+        [Key]
         public int StatusId { get; set; }
 
         [Required]

@@ -4,6 +4,7 @@ namespace Backend.Models
 {
     public class SavingsPool
     {
+        [Key]
         public int SavingsPoolsId { get; set; }
 
         [Required]

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Backend.Models;
+using Backend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,16 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-var app = builder.Build();
+
 
 // builder.Services.AddControllers().AddJsonOptions(options =>
 //     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-builder.Services.AddOpenApi();
-
 builder.Services.AddDbContext<SavingsPoolContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); 
 
+var app = builder.Build();
 
 app.Run();
 

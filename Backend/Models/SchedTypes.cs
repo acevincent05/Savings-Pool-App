@@ -4,6 +4,7 @@ namespace Backend.Models
 {
     public class SchedTypes
     {
+        [Key]
         public int SchedTypeId { get; set; }
 
         [Required]

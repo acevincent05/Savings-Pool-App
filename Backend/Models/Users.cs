@@ -4,6 +4,7 @@ namespace Backend.Models
 {
     public class Users
     {
+        [Key]
         public int UserId { get; set; }
 
         [Required]
