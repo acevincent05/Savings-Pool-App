@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +14,9 @@ var app = builder.Build();
 
 builder.Services.AddOpenApi();
 
- builder.Services.AddDbContext<SavingsPoolContext>(options =>
-     options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
+builder.Services.AddDbContext<SavingsPoolContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); 
+
 
 app.Run();
 
