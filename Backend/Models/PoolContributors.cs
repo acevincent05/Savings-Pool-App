@@ -4,6 +4,7 @@ namespace Backend.Models
 {
     public class PoolContributors
     {
+        [Key]
         public int ContributorId { get; set; }
 
         public ICollection<Users> User { get; } = new List<Users>();
