@@ -13,10 +13,6 @@ namespace Backend.Data
         public DbSet<StatusContribution> StatusContribution { get; set; }
         public DbSet<Users> User { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SavingsPool;Username=postgres;Password=ccms");
-        }
-    
-}
+    }
+
 }
