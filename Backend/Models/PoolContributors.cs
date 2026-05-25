@@ -11,5 +11,7 @@ namespace Backend.Models
         public int StatusId { get; set; }
         public StatusContribution StatusContribution { get; set; }
         
+        
+
     }
 }

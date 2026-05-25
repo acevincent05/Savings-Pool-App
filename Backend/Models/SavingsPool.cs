@@ -9,12 +9,13 @@ namespace Backend.Models
         [Required]
         public string Title { get; set; } = string.Empty;
 
-        public int TargetAmount { get; set; };
+        public int TargetAmount { get; set; }
 
-        public int CurrentAmount { get; set; };
+        public int CurrentAmount { get; set; }
 
         public ICollection<Contributors> Contributor { get; } = new List<Contributor>();
         
-        
+        public int SchedTypeId { get; set; }
+        public SchedTypes SchedType { get; set; }
     }
 }
