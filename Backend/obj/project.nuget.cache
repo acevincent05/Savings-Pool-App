@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WEfhNAK12KE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CL3\\Desktop\\AceGamitin OpeniT Capstone\\Savings-Pool-App\\Backend\\Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CL3\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.7\\microsoft.aspnetcore.openapi.10.0.7.nupkg.sha512",
+    "C:\\Users\\CL3\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
