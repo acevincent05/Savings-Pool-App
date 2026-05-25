@@ -6,12 +6,10 @@ namespace Backend.Models
     {
         public int ContributorId { get; set; }
 
-        public ICollection<Users> User { get; } = new List<User>();
+        public ICollection<Users> User { get; } = new List<Users>();
         
         public int StatusId { get; set; }
         public StatusContribution StatusContribution { get; set; }
-        
-        
 
     }
 }

@@ -104,3 +104,15 @@ C:\Users\CL3\Desktop\AceGamitin OpeniT Capstone\Savings-Pool-App\Backend\obj\Deb
 C:\Users\CL3\Desktop\AceGamitin OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.pdb
 C:\Users\CL3\Desktop\AceGamitin OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.genruntimeconfig.cache
 C:\Users\CL3\Desktop\AceGamitin OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\ref\Backend.dll
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.csproj.AssemblyReference.cache
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.AssemblyInfoInputs.cache
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.AssemblyInfo.cs
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.sourcelink.json
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.dll
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\refint\Backend.dll
+C:\Users\Ace Gamitin\Desktop\OpeniT Capstone\Savings-Pool-App\Backend\obj\Debug\net10.0\Backend.pdb

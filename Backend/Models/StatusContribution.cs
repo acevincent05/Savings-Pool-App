@@ -8,8 +8,8 @@ namespace Backend.Models
 
         [Required]
         public string StatusName { get; set; } = string.Empty;
-
-        public int ICollection<PoolContributors> PoolContributor { get; } = new List<PoolContributor>();
+        
+        public ICollection<PoolContributors> PoolContributor { get; } = new List<PoolContributors>();
         
     }
 }

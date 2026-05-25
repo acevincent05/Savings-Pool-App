@@ -13,7 +13,7 @@ namespace Backend.Models
 
         public int CurrentAmount { get; set; }
 
-        public ICollection<Contributors> Contributor { get; } = new List<Contributor>();
+        public ICollection<PoolContributors> Contributor { get; } = new List<PoolContributors>();
         
         public int SchedTypeId { get; set; }
         public SchedTypes SchedType { get; set; }

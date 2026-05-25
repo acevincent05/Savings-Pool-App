@@ -9,6 +9,6 @@ namespace Backend.Models
         [Required]
         public string Name { get; set; } = string.Empty;
 
-        public ICollection<SavingsPool> SavingsPools { get; } = new List<SavingsPools>();
+        public ICollection<SavingsPool> SavingsPools { get; } = new List<SavingsPool>();
     }
 }
