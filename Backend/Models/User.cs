@@ -1,15 +1,14 @@
-// using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
-// namespace Backend.Models
-// {
-//     public class StudentPrograms
-//     {
-//         public int Id { get; set; }
+namespace Backend.Models
+{
+    public class Users
+    {
+        public int UserId { get; set; }
 
-//         [Required]
-//         public string ProgramName { get; set; } = string.Empty;
+        [Required]
+        public string Name { get; set; } = string.Empty;
 
-//         public ICollection<Student> Students { get; set; } = new List<Student>();
-//         public ICollection<Section> Sections { get; set; } = new List<Section>();
-//     }
-// }
+        public ICollection<SavingsPool> SavingsPools { get; } = new List<SavingsPools>();
+    }
+}
