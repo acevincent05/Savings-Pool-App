@@ -26,11 +26,11 @@ namespace Backend.Data
 
             // Users
             modelBuilder.Entity<Users>().HasData(
-                new Users { UserId = 1, Name = "Alice Johnson" },
-                new Users { UserId = 2, Name = "Bob Smith" },
-                new Users { UserId = 3, Name = "Charlie Brown" },
-                new Users { UserId = 4, Name = "Diana Prince" },
-                new Users { UserId = 5, Name = "Evan Wright" }
+                new Users { UserId = 1, Name = "Vincent Aguirre" },
+                new Users { UserId = 2, Name = "Kyla Dequito" },
+                new Users { UserId = 3, Name = "Ace Gamitin" },
+                new Users { UserId = 4, Name = "Kim Martinez" },
+                new Users { UserId = 5, Name = "Neil Tagle" }
             );
 
             // SavingsPools
