@@ -38,11 +38,16 @@ namespace Backend.Migrations
                     b.Property<int>("StatusId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("ContributorId");
 
                     b.HasIndex("SavingsPoolsId");
 
                     b.HasIndex("StatusContributionStatusId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("PoolContributor");
                 });
@@ -68,14 +73,9 @@ namespace Backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("UsersUserId")
-                        .HasColumnType("integer");
-
                     b.HasKey("SavingsPoolsId");
 
                     b.HasIndex("SchedTypeId");
-
-                    b.HasIndex("UsersUserId");
 
                     b.ToTable("SavingsPool");
                 });
@@ -126,12 +126,7 @@ namespace Backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("PoolContributorsContributorId")
-                        .HasColumnType("integer");
-
                     b.HasKey("UserId");
-
-                    b.HasIndex("PoolContributorsContributorId");
 
                     b.ToTable("User");
                 });
@@ -148,7 +143,15 @@ namespace Backend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Backend.Models.Users", "User")
+                        .WithMany("poolContributor")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("StatusContribution");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Backend.Models.SavingsPool", b =>
@@ -159,23 +162,7 @@ namespace Backend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Models.Users", null)
-                        .WithMany("SavingsPools")
-                        .HasForeignKey("UsersUserId");
-
                     b.Navigation("SchedType");
-                });
-
-            modelBuilder.Entity("Backend.Models.Users", b =>
-                {
-                    b.HasOne("Backend.Models.PoolContributors", null)
-                        .WithMany("User")
-                        .HasForeignKey("PoolContributorsContributorId");
-                });
-
-            modelBuilder.Entity("Backend.Models.PoolContributors", b =>
-                {
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Backend.Models.SavingsPool", b =>
@@ -190,7 +177,7 @@ namespace Backend.Migrations
 
             modelBuilder.Entity("Backend.Models.Users", b =>
                 {
-                    b.Navigation("SavingsPools");
+                    b.Navigation("poolContributor");
                 });
 #pragma warning restore 612, 618
         }
