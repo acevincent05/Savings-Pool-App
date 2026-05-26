@@ -53,10 +53,8 @@ namespace Backend.Data
             modelBuilder.Entity<SchedTypes>().HasData(
                 new SchedTypes { SchedTypeId = 1, Name = "Daily" },
                 new SchedTypes { SchedTypeId = 2, Name = "Weekly" },
-                new SchedTypes { SchedTypeId = 3, Name = "Bi-Weekly" },
-                new SchedTypes { SchedTypeId = 4, Name = "Monthly" },
-                new SchedTypes { SchedTypeId = 5, Name = "Quarterly" },
-                new SchedTypes { SchedTypeId = 6, Name = "Yearly" }
+                new SchedTypes { SchedTypeId = 3, Name = "Monthly" },
+                new SchedTypes { SchedTypeId = 4, Name = "Yearly" }
             );
 
             // 2. StatusContribution
@@ -81,7 +79,7 @@ namespace Backend.Data
                 new SavingsPool 
                 { 
                     SavingsPoolsId = 1, 
-                    Title = "Summer Vacation Fund", 
+                    Title = "Budget for Emergency Expenses", 
                     TargetAmount = 5000, 
                     CurrentAmount = 2500, 
                     SchedTypeId = 4 
@@ -89,7 +87,7 @@ namespace Backend.Data
                 new SavingsPool 
                 { 
                     SavingsPoolsId = 2, 
-                    Title = "New Laptop Group Buy", 
+                    Title = "Car Maintenance Fund", 
                     TargetAmount = 3000, 
                     CurrentAmount = 1200, 
                     SchedTypeId = 2 
@@ -97,7 +95,7 @@ namespace Backend.Data
                 new SavingsPool 
                 { 
                     SavingsPoolsId = 3, 
-                    Title = "Emergency Rainy Day Fund", 
+                    Title = "Vacation Fund", 
                     TargetAmount = 10000, 
                     CurrentAmount = 4500, 
                     SchedTypeId = 4 
@@ -113,10 +111,10 @@ namespace Backend.Data
                 new SavingsPool 
                 { 
                     SavingsPoolsId = 5, 
-                    Title = "Quarterly Investment Pool", 
+                    Title = "Mortgage Down Payment", 
                     TargetAmount = 15000, 
                     CurrentAmount = 6000, 
-                    SchedTypeId = 5 
+                    SchedTypeId = 4
                 }
             );
 
