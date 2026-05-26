@@ -137,11 +137,11 @@ namespace Backend.Migrations
                 columns: new[] { "UserId", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Alice Johnson" },
-                    { 2, "Bob Smith" },
-                    { 3, "Charlie Brown" },
-                    { 4, "Diana Prince" },
-                    { 5, "Evan Wright" }
+                    { 1, "Vincent Aguirre" },
+                    { 2, "Kyla Dequito" },
+                    { 3, "Ace Gamitin" },
+                    { 4, "Kim Martinez" },
+                    { 5, "Neil Tagle" }
                 });
 
             migrationBuilder.InsertData(

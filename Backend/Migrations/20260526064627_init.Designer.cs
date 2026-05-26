@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     [DbContext(typeof(SavingsPoolContext))]
-    [Migration("20260526062215_init")]
+    [Migration("20260526064627_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -400,27 +400,27 @@ namespace Backend.Migrations
                         new
                         {
                             UserId = 1,
-                            Name = "Alice Johnson"
+                            Name = "Vincent Aguirre"
                         },
                         new
                         {
                             UserId = 2,
-                            Name = "Bob Smith"
+                            Name = "Kyla Dequito"
                         },
                         new
                         {
                             UserId = 3,
-                            Name = "Charlie Brown"
+                            Name = "Ace Gamitin"
                         },
                         new
                         {
                             UserId = 4,
-                            Name = "Diana Prince"
+                            Name = "Kim Martinez"
                         },
                         new
                         {
                             UserId = 5,
-                            Name = "Evan Wright"
+                            Name = "Neil Tagle"
                         });
                 });
 
