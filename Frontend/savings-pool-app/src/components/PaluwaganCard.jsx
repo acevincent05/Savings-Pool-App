@@ -1,33 +1,74 @@
-import React from 'react';
-import '../CSS/PaluwaganCard.css';
+import React, { useEffect, useState } from 'react';
+import '../CSS/SavingsPoolCard.css';
 import SavingsBar from './SavingsBar';
 
-export default function PaluwaganCard() {
-  return (
-    <div className="paluwagan-card-grid">
-        <div className="paluwagan-card">
-            <h2 className="paluwagan-card-title">Trip to Manila</h2>
-            <p>Your Contributions</p>
-            <SavingsBar amount={700} total={1000} />
-            <p>Overall Progress</p>
-            <SavingsBar amount={15000} total={50000} />
-        </div>
-        <div className="paluwagan-card">
-            <h2 className="paluwagan-card-title">PS5 for the office</h2>
-            <p>Your Contributions</p>
-            <SavingsBar amount={1500} total={1500} />
-            <p>Overall Progress</p>
-            <SavingsBar amount={15000} total={30000} />            
-        </div>
+export default function SavingsPoolCard({ currentUserId = 1 }) {
+    const [pools, setPools] = useState([]);
+    const [userContributions, setUserContributions] = useState({});
+    const [loading, setLoading] = useState(true);
 
-        <div className="paluwagan-card">
-            <h2 className="paluwagan-card-title">New Couch</h2>
-            <p>Your Contributions</p>
-            <SavingsBar amount={400} total={500} />
-            <p>Overall Progress</p>
-            <SavingsBar amount={2000} total={9000} />
+    useEffect(() => {
+        let cancelled = false;
+
+        async function fetchDashboardData() {
+            try {
+                const poolsResponse = await fetch('/api/SavingsPools');
+                const poolsData = await poolsResponse.json();
+
+                const userResponse = await fetch(`/api/Users/${currentUserId}`);
+                const userData = await userResponse.json();
+
+                if (!cancelled) {
+
+                    const contributionMap = {};
+                    if (userData.contributions) {
+                        userData.contributions.forEach(contrib => {
+                            contributionMap[contrib.savingsPoolId] = contrib.amount;
+                        });
+                    }
+
+                    setPools(poolsData);
+                    setUserContributions(contributionMap);
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error('Error fetching paluwagan data:', error);
+                if (!cancelled) setLoading(false);
+            }
+        }
+
+        fetchDashboardData();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [currentUserId]);
+
+    if (loading) {
+        return <div className="loading-status">Loading Paluwagan Dashboard...</div>;
+    }
+
+    return (
+        <div className="savings-pool-card-grid">
+            {pools.map(pool => {
+                const poolId = pool.savingsPoolsId; 
+                const yourContributionAmount = userContributions[poolId] || 0;
+
+                return (
+                    <a href={`/savings-pool/${poolId}`} className="savings-pool-card-link" key={poolId}>
+                        <div className="savings-pool-card">
+                            <h2 className="savings-pool-card-title">{pool.title}</h2>
+                            <span className="sched-badge">{pool.schedTypeName}</span>
+                            
+                            <p className="progress-label">Your Contributions</p>
+                            <SavingsBar amount={yourContributionAmount} total={pool.targetAmount} />
+                            
+                            <p className="progress-label">Overall Progress ({pool.contributorCount} members)</p>
+                            <SavingsBar amount={pool.totalContributed} total={pool.targetAmount} />
+                        </div>
+                    </a>
+                );
+            })}
         </div>
-    </div>
-    
-  )
+    );
 }

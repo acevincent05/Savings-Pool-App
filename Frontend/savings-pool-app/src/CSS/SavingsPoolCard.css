@@ -1,23 +1,10 @@
 .savings-pool-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
     padding: 20px;
-}
-
-.savings-pool-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    width: 500px;
-}
-
-.savings-pool-card h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .savings-pool-card-grid a {
@@ -25,9 +12,44 @@
     color: inherit;
 }
 
-a:hover .savings-pool-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+.savings-pool-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    width: 100%; 
+    box-sizing: border-box;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
+.savings-pool-card-title {
+    font-size: 1.4rem;
+    margin: 0 0 8px 0;
+    color: #222;
+}
+
+.sched-badge {
+    font-size: 0.8rem;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 12px;
+    width: fit-content;
+    margin-bottom: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.progress-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 12px 0 4px 0;
+    font-weight: 600;
+}
+
+.savings-pool-card-grid a:hover .savings-pool-card {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
