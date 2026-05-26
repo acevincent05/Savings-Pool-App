@@ -1,0 +1,32 @@
+.savings-bar{
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.savings-text {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: black;
+    pointer-events: none;
+}
+
+.savings-progress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s ease-in-out;
+    position: relative;
+    z-index: 0;
+}
+
