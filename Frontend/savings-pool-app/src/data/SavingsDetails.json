@@ -1,0 +1,31 @@
+{
+    "savingsPools": [
+        {
+            "id": 1,
+            "title": "Trip to Manila",
+            "safeKeeper": "James",
+            "contributionsFrequency": "Monthly",
+            "amountPerContribution": 100,
+            "nextContributionDate": "2024-07-01",
+            "currentDate": "2024-06-15"
+        },
+        {
+            "id": 2,
+            "title": "PS5 for the office",
+            "safeKeeper": "Emily",
+            "contributionsFrequency": "Weekly",
+            "amountPerContribution": 200,
+            "nextContributionDate": "2024-06-22",
+            "currentDate": "2024-06-15"
+        },
+        {
+            "id": 3,
+            "title": "New Couch",
+            "safeKeeper": "Michael",
+            "contributionsFrequency": "Daily",
+            "amountPerContribution": 50,
+            "nextContributionDate": "2024-06-29",
+            "currentDate": "2024-06-15"
+        }
+    ]
+}
