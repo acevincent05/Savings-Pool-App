@@ -2701,14 +2701,10 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\Backend.csproj",
-      "projectUniqueName": "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\Backend.csproj",
       "projectName": "Backend",
       "projectPath": "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\CL3\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\obj\\",
-      "projectPath": "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\Backend.csproj",
-      "packagesPath": "C:\\Users\\CL3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3216,13 +3212,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }

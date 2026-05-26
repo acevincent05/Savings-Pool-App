@@ -1,12 +1,35 @@
 import React from 'react';
 import '../CSS/SavingsPoolCard.css';
 import SavingsBar from './SavingsBar';
-import SavingsPoolsData from "../data/SavingPools.json"
+import { useEffect, useState } from 'react';
 
 export default function SavingsPoolCard() {
+    const [pools, setPools] = useState([]);
+
+    useEffect(() => {
+        let cancelled = false;
+        async function fetchData() {
+            try {
+                const response = await fetch('/api/SavingPools');
+                const data = await response.json();
+                if (!cancelled) {
+                    setPools(data);
+                }
+            } catch (error) {
+                console.error('Error fetching savings pools:', error);
+            }
+        }
+
+        fetchData();
+
+        return () => {
+            cancelled = true;
+        };
+    }, []);
+
   return (
     <div className="savings-pool-card-grid">
-        {SavingsPoolsData.savingsPools.map(pool => (
+        {pools.map(pool => (
             <a href={`/savings-pool/${pool.id}`} className="savings-pool-card-link" key={pool.id}>
                 <div className="savings-pool-card">
                     <h2 className="savings-pool-card-title">{pool.title}</h2>
