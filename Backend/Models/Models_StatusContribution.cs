@@ -9,8 +9,7 @@ namespace Backend.Models
 
         [Required]
         public string StatusName { get; set; } = string.Empty;
-        
-        public ICollection<PoolContributors> PoolContributor { get; } = new List<PoolContributors>();
-        
+
+        public ICollection<PoolContributors> PoolContributors { get; set; } = new List<PoolContributors>();
     }
 }

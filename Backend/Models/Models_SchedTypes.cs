@@ -8,7 +8,8 @@ namespace Backend.Models
         public int SchedTypeId { get; set; }
 
         [Required]
-        public string SchedType { get; set; } = string.Empty;
-        
+        public string Name { get; set; } = string.Empty;
+
+        public ICollection<SavingsPool> SavingsPools { get; set; } = new List<SavingsPool>();
     }
 }
