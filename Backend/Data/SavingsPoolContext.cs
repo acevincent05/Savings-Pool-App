@@ -16,7 +16,6 @@ namespace Backend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             // PoolContributors -> SavingsPool
             modelBuilder.Entity<PoolContributors>()
                 .HasOne(pc => pc.SavingsPool)
@@ -44,6 +43,9 @@ namespace Backend.Data
                 .WithMany(st => st.SavingsPools)
                 .HasForeignKey(sp => sp.SchedTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
+                
+            modelBuilder.SeedData();
         }
     }
 }
+

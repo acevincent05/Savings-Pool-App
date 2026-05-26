@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\Backend.csproj": {}
+    "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\Backend.csproj": {
+    "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\Backend.csproj",
+        "projectPath": "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\CL3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CL3\\Documents\\repos\\Savings-Pool-App\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\CL3\\Desktop\\Savings-Pool-App\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -77,6 +77,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[10.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.7, )"
             }
           },
           "imports": [
