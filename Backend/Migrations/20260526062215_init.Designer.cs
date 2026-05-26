@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     [DbContext(typeof(SavingsPoolContext))]
-    [Migration("20260526055627_init")]
+    [Migration("20260526062215_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -264,7 +264,7 @@ namespace Backend.Migrations
                         {
                             SavingsPoolsId = 1,
                             CurrentAmount = 2500,
-                            SchedTypeId = 4,
+                            SchedTypeId = 1,
                             TargetAmount = 5000,
                             Title = "Summer Vacation Fund"
                         },
@@ -274,31 +274,31 @@ namespace Backend.Migrations
                             CurrentAmount = 1200,
                             SchedTypeId = 2,
                             TargetAmount = 3000,
-                            Title = "New Laptop Group Buy"
+                            Title = "College Semester Tuition"
                         },
                         new
                         {
                             SavingsPoolsId = 3,
                             CurrentAmount = 4500,
-                            SchedTypeId = 4,
+                            SchedTypeId = 3,
                             TargetAmount = 10000,
-                            Title = "Emergency Rainy Day Fund"
+                            Title = "Car Replacement Fund"
                         },
                         new
                         {
                             SavingsPoolsId = 4,
                             CurrentAmount = 800,
-                            SchedTypeId = 1,
+                            SchedTypeId = 4,
                             TargetAmount = 800,
-                            Title = "Office Party Budget"
+                            Title = "Emergency Medical Fund"
                         },
                         new
                         {
                             SavingsPoolsId = 5,
                             CurrentAmount = 6000,
-                            SchedTypeId = 5,
+                            SchedTypeId = 2,
                             TargetAmount = 15000,
-                            Title = "Quarterly Investment Pool"
+                            Title = "Mortgage Downpayment"
                         });
                 });
 
@@ -332,21 +332,11 @@ namespace Backend.Migrations
                         new
                         {
                             SchedTypeId = 3,
-                            Name = "Bi-Weekly"
-                        },
-                        new
-                        {
-                            SchedTypeId = 4,
                             Name = "Monthly"
                         },
                         new
                         {
-                            SchedTypeId = 5,
-                            Name = "Quarterly"
-                        },
-                        new
-                        {
-                            SchedTypeId = 6,
+                            SchedTypeId = 4,
                             Name = "Yearly"
                         });
                 });

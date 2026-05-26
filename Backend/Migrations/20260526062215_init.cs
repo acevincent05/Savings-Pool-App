@@ -117,10 +117,8 @@ namespace Backend.Migrations
                 {
                     { 1, "Daily" },
                     { 2, "Weekly" },
-                    { 3, "Bi-Weekly" },
-                    { 4, "Monthly" },
-                    { 5, "Quarterly" },
-                    { 6, "Yearly" }
+                    { 3, "Monthly" },
+                    { 4, "Yearly" }
                 });
 
             migrationBuilder.InsertData(
@@ -151,11 +149,11 @@ namespace Backend.Migrations
                 columns: new[] { "SavingsPoolsId", "CurrentAmount", "SchedTypeId", "TargetAmount", "Title" },
                 values: new object[,]
                 {
-                    { 1, 2500, 4, 5000, "Summer Vacation Fund" },
-                    { 2, 1200, 2, 3000, "New Laptop Group Buy" },
-                    { 3, 4500, 4, 10000, "Emergency Rainy Day Fund" },
-                    { 4, 800, 1, 800, "Office Party Budget" },
-                    { 5, 6000, 5, 15000, "Quarterly Investment Pool" }
+                    { 1, 2500, 1, 5000, "Summer Vacation Fund" },
+                    { 2, 1200, 2, 3000, "College Semester Tuition" },
+                    { 3, 4500, 3, 10000, "Car Replacement Fund" },
+                    { 4, 800, 4, 800, "Emergency Medical Fund" },
+                    { 5, 6000, 2, 15000, "Mortgage Downpayment" }
                 });
 
             migrationBuilder.InsertData(
