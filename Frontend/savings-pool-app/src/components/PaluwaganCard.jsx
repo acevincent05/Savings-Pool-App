@@ -6,6 +6,16 @@ export default function SavingsPoolCard({ currentUserId = 1 }) {
     const [pools, setPools] = useState([]);
     const [userContributions, setUserContributions] = useState({});
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+
+    const normalizePool = (pool) => ({
+        id: pool.savingsPoolsId ?? pool.SavingsPoolsId ?? pool.id,
+        title: pool.title ?? pool.Title ?? 'Untitled pool',
+        targetAmount: Number(pool.targetAmount ?? pool.TargetAmount ?? 0),
+        totalContributed: Number(pool.totalContributed ?? pool.TotalContributed ?? 0),
+        contributorCount: Number(pool.contributorCount ?? pool.ContributorCount ?? 0),
+        schedTypeName: pool.schedTypeName ?? pool.SchedTypeName ?? '',
+    });
 
     useEffect(() => {
         let cancelled = false;
@@ -13,27 +23,37 @@ export default function SavingsPoolCard({ currentUserId = 1 }) {
         async function fetchDashboardData() {
             try {
                 const poolsResponse = await fetch('/api/SavingsPools');
+                if (!poolsResponse.ok) {
+                    throw new Error(`Savings pools request failed (${poolsResponse.status})`);
+                }
                 const poolsData = await poolsResponse.json();
 
                 const userResponse = await fetch(`/api/Users/${currentUserId}`);
+                if (!userResponse.ok) {
+                    throw new Error(`User request failed (${userResponse.status})`);
+                }
                 const userData = await userResponse.json();
 
                 if (!cancelled) {
 
                     const contributionMap = {};
-                    if (userData.contributions) {
-                        userData.contributions.forEach(contrib => {
-                            contributionMap[contrib.savingsPoolId] = contrib.amount;
+                    const contributions = userData.Contributions ?? userData.contributions ?? [];
+                    contributions.forEach(contrib => {
+                        const savingsPoolId = contrib.SavingsPoolId ?? contrib.savingsPoolId ?? contrib.savingsPoolID;
+                        contributionMap[savingsPoolId] = contrib.Amount ?? contrib.amount ?? 0;
                         });
-                    }
 
-                    setPools(poolsData);
+                    setPools(poolsData.map(normalizePool));
                     setUserContributions(contributionMap);
+                    setError('');
                     setLoading(false);
                 }
             } catch (error) {
                 console.error('Error fetching paluwagan data:', error);
-                if (!cancelled) setLoading(false);
+                if (!cancelled) {
+                    setError('Unable to load paluwagan data right now. Check that the backend is running.');
+                    setLoading(false);
+                }
             }
         }
 
@@ -48,10 +68,14 @@ export default function SavingsPoolCard({ currentUserId = 1 }) {
         return <div className="loading-status">Loading Paluwagan Dashboard...</div>;
     }
 
+    if (error) {
+        return <div className="loading-status">{error}</div>;
+    }
+
     return (
         <div className="savings-pool-card-grid">
             {pools.map(pool => {
-                const poolId = pool.savingsPoolsId; 
+                const poolId = pool.id;
                 const yourContributionAmount = userContributions[poolId] || 0;
 
                 return (
