@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
       <div className="header-content">
-        <h1 className="header-title">Paluwagan</h1>
+        <h1 className="header-title">Savings Pool</h1>
         <nav className="nav-links">
           <a href="#profile" className="profile-link">
             <FaUserCircle className="profile-icon" />

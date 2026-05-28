@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import SavingsBar from '../components/SavingsBar';
 import '../CSS/SavingsPoolDetails.css';
 
-export default function SavingsPoolDetails({ currentUserId = 1 }) { 
+export default function SavingsPoolDetails({ currentUserId = 1 }) {
     const { id } = useParams();
     const [poolDetail, setPoolDetail] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -15,16 +15,15 @@ export default function SavingsPoolDetails({ currentUserId = 1 }) {
         async function fetchPoolDetails() {
             try {
                 setLoading(true);
-
                 const response = await fetch(`/api/SavingsPools/${id}`);
                 
                 if (!response.ok) {
-                    throw new Error(`Failed to fetch pool details. Server responded with status: ${response.status}`);
+                    throw new Error(`Server returned status: ${response.status}`);
                 }
                 
-                const data = await response.json();
+                const data = await response.ok ? await response.json() : null;
 
-                if (!isCancelled) {
+                if (!isCancelled && data) {
                     setPoolDetail(data);
                     setLoading(false);
                 }
